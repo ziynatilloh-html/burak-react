@@ -5,7 +5,7 @@ import CardOverflow from "@mui/joy/CardOverflow";
 import AspectRatio from "@mui/joy/AspectRatio";
 
 const activeUsers = [
-  { memberNick: "Martin", memberImage: "/img/martin.webp" },
+  { memberNick: "Zayn", memberImage: "/img/zayn.webp" },
   { memberNick: "Justin", memberImage: "/img/justin.webp" },
   { memberNick: "Rose", memberImage: "/img/rose.webp" },
   { memberNick: "Nusret", memberImage: "/img/nusret.webp" },

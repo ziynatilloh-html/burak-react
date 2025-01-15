@@ -13,7 +13,7 @@ const list = [
   { productName: "Lavash", imagePath: "/img/lavash.webp" },
   { productName: "Cutlet", imagePath: "/img/cutlet.webp" },
   { productName: "Kebab", imagePath: "/img/kebab.webp" },
-  { productName: "kebab", imagePath: "/img/kebab-fresh.webp" },
+  { productName: "Kebab", imagePath: "/img/kebab-fresh.webp" },
 ];
 
 export default function PopularDishes() {
