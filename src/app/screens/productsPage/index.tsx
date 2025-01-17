@@ -6,7 +6,6 @@ import Products from "./Products";
 
 export default function ProductsPage() {
   const products = useRouteMatch();
-  console.log(products);
   return (
     <div className="products-page">
       <Switch>
