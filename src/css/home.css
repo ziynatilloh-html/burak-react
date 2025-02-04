@@ -301,6 +301,7 @@
   height: 745px;
   background: #f8f8ff;
   display: flex;
+  margin-top: 150px;
 }
 
 .homepage .events-frame .category-title {
