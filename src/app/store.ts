@@ -1,7 +1,13 @@
-import { configureStore, ThunkAction, Action } from "@reduxjs/toolkit";
+import { HomePageState } from "./../lib/types/screen";
+import {
+  configureStore,
+  ThunkAction,
+  Action,
+  AnyAction,
+} from "@reduxjs/toolkit";
 
 export const store = configureStore({
-  reducer: {},
+  reducer: { homePage: HomePageReducer },
 });
 
 export type AppDispatch = typeof store.dispatch;
@@ -12,3 +18,6 @@ export type AppThunk<ReturnType = void> = ThunkAction<
   unknown,
   Action<string>
 >;
+function HomePageReducer(state: unknown, action: AnyAction): unknown {
+  throw new Error("Function not implemented.");
+}
