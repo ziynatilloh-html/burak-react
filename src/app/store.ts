@@ -4,9 +4,15 @@ import {
   ThunkAction,
   Action,
   AnyAction,
+  getDefaultMiddleware,
 } from "@reduxjs/toolkit";
+import reduxLogger from "redux-logger";
 
 export const store = configureStore({
+  middleware: (getDefaultMiddleware) =>
+    //@ts-ignore
+    getDefaultMiddleware().concat(reduxLogger),
+
   reducer: { homePage: HomePageReducer },
 });
 
