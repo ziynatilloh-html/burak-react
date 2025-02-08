@@ -37,7 +37,7 @@ export default function NewDishes() {
                             <Typography className="title">
                               {ele.productName}
                             </Typography>
-                            <Divider width="2" height="24" bg="#d9d9d9" />
+                            {/* <Divider width="2" height="1px" bg="#d9d9d9" /> */}
                             <Typography className="price">$12</Typography>
                           </Stack>
                           <Stack>
