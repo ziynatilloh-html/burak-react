@@ -31,6 +31,7 @@ export default function HomePage() {
     console.log("popularDishes:", popularDishes);
   }, []);
 
+  console.log(process.env.REACT_APP_API_URL);
   return (
     <div className="homepage">
       <Statistics />
