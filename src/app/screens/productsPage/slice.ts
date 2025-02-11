@@ -7,7 +7,7 @@ const initialState: ProductsPageState = {
   products: [],
 };
 const productsPageSlice = createSlice({
-  name: "productPage",
+  name: "productsPage",
   initialState,
   reducers: {
     setRestaurant: (state, action) => {
@@ -22,9 +22,7 @@ const productsPageSlice = createSlice({
   },
 });
 
-const ProductPageReducer = productsPageSlice.reducer;
-
-export default ProductPageReducer;
-
 export const { setRestaurant, setChosenProduct, setProducts } =
   productsPageSlice.actions;
+const ProductsPageReducer = productsPageSlice.reducer;
+export default ProductsPageReducer;
