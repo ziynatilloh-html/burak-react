@@ -26,3 +26,8 @@ export enum ProductCollection {
   DRINK = "DRINK",
   OTHER = "OTHER",
 }
+export enum ProductOrder {
+  NEW = "createdAt",
+  PRICE = "productPrice",
+  VIEWS = "productViews",
+}
