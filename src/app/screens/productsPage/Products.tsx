@@ -16,6 +16,18 @@ import Pagination from "@mui/material/Pagination";
 import PaginationItem from "@mui/material/PaginationItem";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import { setProducts } from "./slice";
+import { Member } from "../../../lib/types/member";
+import { createSelector, Dispatch } from "@reduxjs/toolkit";
+import { Product } from "../../../lib/types/product";
+import { retrieveProducts } from "./selector";
+
+const actionDispatch = (dispatch: Dispatch) => ({
+  setProducts: (data: Product[]) => dispatch(setProducts(data)),
+});
+const productsRetriever = createSelector(retrieveProducts, (products) => ({
+  products,
+}));
 
 const products = [
   { productName: "Vegetarian Soup", imagePath: "/img/Subtract4.webp" },

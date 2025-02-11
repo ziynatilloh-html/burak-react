@@ -10,6 +10,11 @@ import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
 import { FreeMode, Navigation, Thumbs } from "swiper";
+import { createSelector, Dispatch } from "@reduxjs/toolkit";
+import { setChosenProduct, setRestaurant } from "./slice";
+import { Member } from "../../../lib/types/member";
+import { retrieveChosenProduct, retrieveRestaurant } from "./selector";
+import { Product } from "../../../lib/types/product";
 
 export default function ChosenProduct() {
   return (
