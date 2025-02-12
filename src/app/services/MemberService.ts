@@ -21,6 +21,19 @@ class MemberService {
       throw err;
     }
   }
+
+  public async getRetsraunt(): Promise<Member> {
+    try {
+      const url = this.path + "/member/restraunt";
+      const result = await axios.get(url);
+      console.log("getTopUsers:", result);
+      const restraunt: Member = result.data;
+      return restraunt;
+    } catch (err) {
+      console.log("Error, getTopUsers:", err);
+      throw err;
+    }
+  }
 }
 
 export default MemberService;
