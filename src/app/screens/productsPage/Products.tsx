@@ -1,4 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, {
+  ChangeEvent,
+  ChangeEventHandler,
+  useEffect,
+  useState,
+} from "react";
 import { Box, Button, Container, Stack } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import MonetizationOnIcon from "@mui/icons-material/MonetizationOn";
@@ -21,6 +26,8 @@ import {
 } from "../../../lib/enums/product.enum";
 import { serverApi } from "../../../lib/config";
 import BackspaceIcon from "@mui/icons-material/Backspace";
+import { useHistory } from "react-router-dom";
+import { StringifyOptions } from "querystring";
 
 /** REDUX SLICE & SELECTOR */
 const actionDispatch = (dispatch: Dispatch) => ({
@@ -42,6 +49,7 @@ export default function Products() {
     search: "",
   });
   const [searchText, setSearchText] = useState<string>("");
+  const history = useHistory();
   useEffect(() => {
     const product = new ProductService();
     product
@@ -83,6 +91,16 @@ export default function Products() {
     setSearchText("");
     setProductSearch({ ...productSearch, search: "" });
   };
+  const paginationHandler = (e: ChangeEvent<any>, value: number) => {
+    productSearch.page = value;
+    setProductSearch({ ...productSearch });
+  };
+
+  const choseDishHandler = (id: string) => {
+    // id is now used
+    history.push(`/products/${id}`);
+  };
+
   return (
     <div className="products">
       <Container>
@@ -236,7 +254,11 @@ export default function Products() {
                       ? product.productVolume + "litr"
                       : product.productSize + "size";
                   return (
-                    <Stack key={product._id} className="product-card">
+                    <Stack
+                      key={product._id}
+                      className="product-card"
+                      onClick={() => choseDishHandler(product._id)}
+                    >
                       <Stack
                         className={"product-img"}
                         sx={{ backgroundImage: `url(${imagePath})` }}
@@ -281,8 +303,12 @@ export default function Products() {
           </Stack>
           <Stack className="pagination-section">
             <Pagination
-              count={3}
-              page={1}
+              count={
+                products.length !== 0
+                  ? productSearch.page + 1
+                  : productSearch.page
+              }
+              page={productSearch.page}
               renderItem={(item) => (
                 <PaginationItem
                   components={{
@@ -293,6 +319,7 @@ export default function Products() {
                   color="secondary"
                 />
               )}
+              onChange={paginationHandler}
             />
           </Stack>
         </Stack>

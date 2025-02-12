@@ -259,6 +259,7 @@
 }
 .products-page .products .product-wrapper .product-card .product-img {
   border-bottom-left-radius: 36px;
+  border-top-right-radius: 36px;
   width: 273px;
   /* height: 340px; */
 }
