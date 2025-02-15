@@ -20,6 +20,7 @@ import ProductService from "../../services/ProductService";
 import MemberService from "../../services/MemberService";
 import { useDispatch, useSelector } from "react-redux";
 import { serverApi } from "../../../lib/config";
+import { CartItem } from "../../../lib/types/search";
 
 const actionDispatch = (dispatch: Dispatch) => ({
   setRestaurant: (data: Member) => dispatch(setRestaurant(data)),
@@ -39,23 +40,16 @@ const restaurantRetriever = createSelector(
     restaurant,
   })
 );
-export default function ChosenProduct() {
+
+interface ChosenProductProps {
+  onAdd: (item: CartItem) => void;
+}
+export default function ChosenProduct(props: ChosenProductProps) {
+  const { onAdd } = props;
   const { productId } = useParams<{ productId: string }>();
   const { setChosenProduct, setRestaurant } = actionDispatch(useDispatch());
   const { chosenProduct } = useSelector(chosenProductRetriever);
   const { restaurant } = useSelector(restaurantRetriever);
-  // useEffect(() => {
-  //   const product = new ProductService();
-  //   product
-  //     .getProduct(productId)
-  //     .then((data) => setChosenProduct(data))
-  //     .catch((err) => console.log(err));
-  //   const member = new MemberService();
-  //   member
-  //     .getRetsraunt()
-  //     .then((data) => setRestaurant(data))
-  //     .catch((err) => console.log(err));
-  // }, []);
   useEffect(() => {
     const product = new ProductService();
     product
