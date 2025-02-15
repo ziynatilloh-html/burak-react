@@ -12,6 +12,7 @@ import "../css/navbar.css";
 import "../css/footer.css";
 import HelpPage from "./screens/helpPage";
 import useBasket from "./hooks/useBasket";
+import AuthenticationModal from "./components/auth";
 //TODO Local Storage haqida bilishimiz kerak/;
 //TODO GetItem qanday ishlaydi va u qayerdan kelyabti/;
 //TODO Json Parseni takrorlash/;
@@ -20,8 +21,11 @@ import useBasket from "./hooks/useBasket";
 function App() {
   const location = useLocation();
   const { cartItems, onAdd, onRemove, onDelete, onDeleteAll } = useBasket();
+  const [signupOpen, setSignupOpen] = useState<boolean>(false);
+  const [loginOpen, setLoginOpen] = useState<boolean>(false);
   /** HANDLERS **/
-
+  const handleSignupClose = () => setSignupOpen(false);
+  const handleLoginClose = () => setLoginOpen(false);
   return (
     <>
       {location.pathname === "/" ? (
@@ -60,6 +64,12 @@ function App() {
         </Route>
       </Switch>
       <Footer />
+      <AuthenticationModal
+        signupOpen={signupOpen}
+        loginOpen={loginOpen}
+        handleSignupClose={handleSignupClose}
+        handleLoginClose={handleLoginClose}
+      />
     </>
   );
 }
