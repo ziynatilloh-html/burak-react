@@ -17,6 +17,7 @@ import AuthenticationModal from "./components/auth";
 //TODO GetItem qanday ishlaydi va u qayerdan kelyabti/;
 //TODO Json Parseni takrorlash/;
 //TODO Json.stringify gotta check what it is!;
+//TODO Modallar qanday ekani haqida bilish!;
 
 function App() {
   const location = useLocation();
@@ -35,6 +36,8 @@ function App() {
           onRemove={onRemove}
           onDelete={onDelete}
           onDeleteAll={onDeleteAll}
+          setSignupOpen={setSignupOpen}
+          setLoginOpen={setLoginOpen}
         />
       ) : (
         <OtherNavbar
@@ -43,6 +46,8 @@ function App() {
           onRemove={onRemove}
           onDelete={onDelete}
           onDeleteAll={onDeleteAll}
+          setSignupOpen={setSignupOpen}
+          setLoginOpen={setLoginOpen}
         />
       )}
       <Switch>
