@@ -121,7 +121,19 @@ export default function ChosenProduct(props: ChosenProductProps) {
               <span>Price:</span>
               <span>${chosenProduct.productPrice}</span>
             </div>
-            <div className={"button-box"}>
+            <div
+              className={"button-box"}
+              onClick={(e) => {
+                onAdd({
+                  _id: chosenProduct._id,
+                  quantity: 1,
+                  name: chosenProduct.productName,
+                  price: chosenProduct.productPrice,
+                  image: chosenProduct.productImages[0],
+                });
+                e.stopPropagation();
+              }}
+            >
               <Button variant="contained">Add To Basket</Button>
             </div>
           </Box>
