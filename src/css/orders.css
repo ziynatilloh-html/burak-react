@@ -7,7 +7,7 @@
 }
 .order-page .order-container {
   width: 1300px;
-  height: 66%;
+  height: auto;
   display: flex;
   flex-direction: row;
   background-color: #f8f8ff;
@@ -15,12 +15,13 @@
 .order-page .order-container .order-left {
   width: 900px;
   height: auto;
-  margin-top: 53px;
+  margin-top: 51px;
   margin-bottom: 21px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: start;
 }
+
 .order-page .order-container .order-left .order-nav-frame {
   display: flex;
   justify-content: space-evenly;
@@ -28,6 +29,7 @@
   margin-bottom: 20px;
 }
 .order-page .order-container .order-left .order-nav-frame .order-main-content {
+  height: auto;
   padding: 0, 0, 0, 0px;
 }
 .order-page .order-container .order-left .MuiTab-root {
@@ -194,8 +196,8 @@
   height: auto;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  margin-top: 20px;
+  justify-content: flex-start;
+  margin-top: 182px;
 }
 .order-page .order-container .order-right .order-info-box {
   width: 372px;
