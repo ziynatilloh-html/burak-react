@@ -18,11 +18,6 @@ import { sweetErrorHandling, sweetTopSuccessAlert } from "../lib/sweetAlert";
 import { T } from "../lib/types/common";
 import MemberService from "./services/MemberService";
 import { useGlobals } from "./hooks/useGlobal";
-//TODO Local Storage haqida bilishimiz kerak/;
-//TODO GetItem qanday ishlaydi va u qayerdan kelyabti/;
-//TODO Json Parseni takrorlash/;
-//TODO Json.stringify gotta check what it is!;
-//TODO Modallar qanday ekani haqida bilish!;
 
 function App() {
   const location = useLocation();
