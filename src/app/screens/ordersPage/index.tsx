@@ -16,6 +16,8 @@ import OrderService from "../../services/OrderService";
 import { OrderStatus } from "../../../lib/enums/order.enum";
 import { useGlobals } from "../../hooks/useGlobal";
 import { useHistory } from "react-router-dom";
+import { serverApi } from "../../../lib/config";
+import { MemberType } from "../../../lib/enums/member.enum";
 
 // Redux Slice & Selector
 const actionDispatch = (dispatch: Dispatch) => ({
@@ -93,22 +95,40 @@ export default function OrdersPage() {
             <Box className={"member-box"}>
               <div className={"order-user-img"}>
                 <img
-                  src={"/icons/default-user.svg"}
+                  src={
+                    authMember?.memberImage
+                      ? `${serverApi}/${authMember.memberImage}`
+                      : "/icons/default-user.svg"
+                  }
                   className={"order-user-avatar"}
                 />
               </div>
               <div className={"order-user-icon-box"}>
                 <img
-                  src={"/icons/user-badge.svg"}
+                  src={
+                    authMember?.memberType === MemberType.RESTAURANT
+                      ? "/icons/restaurant.svg"
+                      : "/icons/user-badge.svg"
+                  }
                   className={"order-user-prof-img"}
                 />
               </div>
-              <span className={"order-user-name"}>Justin</span>
-              <span className={"order-user-prof"}>User</span>
+              <span className={"order-user-name"}>
+                {" "}
+                {authMember?.memberNick}
+              </span>
+              <span className={"order-user-prof"}>
+                {" "}
+                {authMember?.memberType}
+              </span>
               <Box className={"liner"}></Box>
               <Box className="order-user-address">
                 <LocationOnIcon className="location-icon" />
-                <span>South Korea, Busan</span>
+                <span>
+                  {authMember?.memberAdress
+                    ? authMember?.memberAdress
+                    : `No address`}
+                </span>
               </Box>
             </Box>
           </Box>

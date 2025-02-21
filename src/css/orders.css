@@ -222,10 +222,10 @@
 
 .order-page
   .order-container
-  .order-right
-  .order-info-box
   .member-box
-  .order-user-img {
+  .order-user-img
+  img
+  ~ .order-user-avatar {
   width: 117px;
   height: 112px;
   margin-top: 29px;
