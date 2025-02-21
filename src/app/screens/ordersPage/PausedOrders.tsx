@@ -9,7 +9,7 @@ import { serverApi } from "../../../lib/config";
 import { retrievePausedOrders } from "./selector";
 import { Order, OrderItem } from "../../../lib/types/order";
 
-// Redux Slice & Selector
+// Redux Slice & Selecto
 
 const pausedOrdersRetriever = createSelector(
   retrievePausedOrders,
