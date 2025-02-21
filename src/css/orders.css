@@ -441,3 +441,9 @@
 .order-page .order-main-box .completed-icon {
   font-size: 20px;
 }
+
+.order-page img.img-of-frame {
+  width: 54px;
+  height: 50px;
+  border-radius: 11px;
+}

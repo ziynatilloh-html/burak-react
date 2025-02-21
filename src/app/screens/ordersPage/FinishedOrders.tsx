@@ -34,7 +34,7 @@ export default function FinishedOrders() {
                   const imagePath = `${serverApi}/${product.productImages[0]}`;
                   return (
                     <Box key={item._id} className="orders-name-price">
-                      <img src={imagePath} />
+                      <img className="img-of-frame" src={imagePath} />
                       <p className="title-dish">{product.productName}</p>
                       <Box className="price-box">
                         <p>${item.itemPrice}</p>
@@ -81,7 +81,7 @@ export default function FinishedOrders() {
                   className="completed-payment-button"
                 >
                   <CheckCircleIcon className="completed-icon" />
-                  Order Completed
+                  Delivery Completed
                 </Button>
               </Box>
             </Box>
