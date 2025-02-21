@@ -70,8 +70,8 @@ export default function PausedOrders() {
                       height: "55px",
                     }}
                   />
-                  <p>{order.orderDelivery}</p>
-                  <p>$2</p>
+                  <p>Delivery cost</p>
+                  <p>${order.orderDelivery}</p>
                   <img
                     src={"/icons/pause.svg"}
                     style={{
