@@ -220,12 +220,7 @@
     0px 4px 16px 0px rgba(242, 189, 87, 0.04) inset;
 }
 
-.order-page
-  .order-container
-  .member-box
-  .order-user-img
-  img
-  ~ .order-user-avatar {
+.order-page .order-container .member-box .order-user-img img.order-user-avatar {
   width: 117px;
   height: 112px;
   margin-top: 29px;
